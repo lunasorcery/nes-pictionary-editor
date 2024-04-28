@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NES Pictionary Editor</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <canvas id="canvas" width="384" height="512"></canvas>
+    <table id="tool-palette">
+        <tr>
+            <td><button data-brush="0x00" data-tile-icon="0x00"></button></td>
+            <td><button data-brush="0x01" data-tile-icon="0x01"></button></td>
+            <td><button data-brush="0x02" data-tile-icon="0x02"></button></td>
+            <td><button data-brush="0x04" data-tile-icon="0x04"></button></td>
+            <td><button data-brush="0x08" data-tile-icon="0x08"></button></td>
+        </tr>
+        <tr>
+            <td><button data-brush="0x11" data-tile-icon="0x11"></button></td>
+            <td><button data-brush="0x12" data-tile-icon="0x12"></button></td>
+            <td><button data-brush="0x13" data-tile-icon="0x13"></button></td>
+            <td><button data-brush="0x14" data-tile-icon="0x14"></button></td>
+            <td><button data-brush="0x15" data-tile-icon="0x15"></button></td>
+        </tr>
+        <tr>
+            <td><button data-action="undo">undo</button></td>
+            <td><button data-brush="0x80" data-tile-icon="0x80"></button></td>
+            <td><button data-brush="0xB0" data-tile-icon="0xB0"></button></td>
+            <td><button data-brush="0x90" data-tile-icon="0x90"></button></td>
+            <td><button data-brush="0xD0" data-tile-icon="0xD0"></button></td>
+        </tr>
+        <tr>
+            <td><button data-action="redo">redo</button></td>
+            <td><button data-brush="0xC0" data-tile-icon="0xC0"></button></td>
+            <td><button data-brush="0xF0" data-tile-icon="0xF0"></button></td>
+            <td><button data-brush="0xE0" data-tile-icon="0xE0"></button></td>
+            <td><button data-brush="0xA0" data-tile-icon="0xA0"></button></td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <button data-action="export">???</button>
+            </td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
