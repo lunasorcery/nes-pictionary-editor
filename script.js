@@ -187,7 +187,13 @@ function redrawButtons() {
         }
 
         if (actionIdStr == "export") {
-            toolButton.innerHTML = "export to clipboard";
+            if (navigator.clipboard) {   
+                toolButton.innerHTML = "export to clipboard";
+                toolButton.disabled = false;
+            } else {
+                toolButton.innerHTML = "export unavailable :(";
+                toolButton.disabled = true;
+            }
         }
     }
 }
