@@ -485,7 +485,6 @@ async function performExport(e) {
     }*/
 
     try {
-        location.hash = exportStr.replace('\n','');
         await navigator.clipboard.writeText(exportStr);
         e.target.innerHTML = "copied!";
     } catch (error) {
@@ -501,10 +500,12 @@ function handleBeforeUnload(e) {
 }
 
 function setup() {
-    // late addition, loading an image from the url hash
-    if (location.hash.length == WIDTH * HEIGHT * 2 + 1) {
+    // late addition, loading an image from the url
+    const searchParams = new URLSearchParams(window.location.search);
+    var urlDrawing = searchParams.get('drawing');
+    if (urlDrawing && urlDrawing.length == WIDTH * HEIGHT * 2) {
         for (var i = 0; i < WIDTH*HEIGHT; ++i) {
-            tilemap[i] = parseInt(location.hash.substring(i*2+1,i*2+3), 16);
+            tilemap[i] = parseInt(urlDrawing.substring(i*2,i*2+2), 16);
         }
     }
 
